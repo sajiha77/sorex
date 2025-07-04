@@ -28,3 +28,16 @@ annualTab.addEventListener("click", () => {
   proPrice.innerHTML =
     "$399<span class='month'>/month</span><br><small>$3,591 USD/year (25% off)</small>";
 });
+document.querySelectorAll(".faq-question").forEach((item) => {
+  item.addEventListener("click", () => {
+    const box = item.parentElement;
+
+    document.querySelectorAll(".faq-box").forEach((faq) => {
+      if (faq !== box) {
+        faq.classList.remove("active");
+      }
+    });
+
+    box.classList.toggle("active");
+  });
+});

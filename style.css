@@ -376,7 +376,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
 }
 
@@ -467,51 +467,147 @@ h1 {
   color: white;
 }
 
-.cta {
-  background: #f0f9ff;
-  border-radius: 8px;
-  padding: 40px 20px;
-  text-align: center;
+/* CTA Section */
+.cta-section {
+  width: 100%;
+  max-width: 1163px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 56px;
+  margin: 60px auto;
+  box-shadow: 0px 0px 1.56px 0px #0a0f2604, 0px 0px 4.39px 0px #0a0f2606,
+    0px 0px 11.77px 0px #0a0f2609, 0px 0px 27px 0px #0a0f260d;
 }
-.cta-buttons {
-  margin-top: 20px;
+
+.cta-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  /* flex-wrap: wrap; */
+}
+
+.cta-text {
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cta-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+  color: #012970;
+}
+
+.cta-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: #212529;
+}
+
+.cta-actions {
+  display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
-.cta-image {
-  width: 300px;
-  margin: 20px auto;
+
+.btn-cta {
+  padding: 12px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+.btn-cta.primary {
+  background-color: #4154f1;
+  color: white;
+  border: 1px solid #4154f1;
+}
+
+.btn-cta.primary:hover {
+  background-color: #1f33cc;
+}
+
+.btn-cta.secondary {
+  background-color: transparent;
+  color: #4154f1;
+  border: 1px solid #4154f1;
+}
+
+.btn-cta.secondary:hover {
+  background-color: #4154f1;
+  color: white;
+}
+
+.cta-image-wrapper {
+  /* max-width: 40%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-img {
+  max-width: 579px;
+  height: 392px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .cta-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .cta-text,
+  .cta-image-wrapper {
+    max-width: 100%;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-description {
+    font-size: 18px;
+  }
+}
+
 /* ========== FAQ ========== */
 .faq-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #fff;
   padding: 60px 20px;
 }
 
 .faq-heading {
-  font-family: var(--font-secondary, sans-serif);
-  color: #000;
-  text-align: center;
-  font-size: 40px;
-  line-height: 40px;
-  font-weight: 500;
-  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #012970;
+  margin-bottom: 30px;
 }
 
 .faq-box {
   width: 100%;
-  max-width: 768px;
-  border: 1px solid #f1f1f1;
+  max-width: 1160px;
   border-radius: 12px;
   margin-bottom: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
+  border: 1px solid #d2d7e1;
+  background-color: white;
 }
 
 .faq-question {
@@ -526,8 +622,10 @@ h1 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background-color: #f9f9f9;
-  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+  color: #012970;
 }
 
 .faq-question:hover {
@@ -547,8 +645,8 @@ h1 {
   padding: 0 1rem;
   font-size: 0.95rem;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  color: #333;
-  font-weight: 500;
+  color: #212529;
+  font-weight: 400;
 }
 
 .faq-box.active .faq-answer {

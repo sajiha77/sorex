@@ -7,3 +7,24 @@ document.getElementById("annual-tab").addEventListener("click", () => {
   document.getElementById("annual-tab").classList.add("active");
   document.getElementById("monthly-tab").classList.remove("active");
 });
+
+const monthlyTab = document.getElementById("monthly-tab");
+const annualTab = document.getElementById("annual-tab");
+const plusPrice = document.querySelector("#plus .price");
+const proPrice = document.querySelector("#pro .price");
+
+monthlyTab.addEventListener("click", () => {
+  monthlyTab.classList.add("active");
+  annualTab.classList.remove("active");
+  plusPrice.innerHTML = "$149<span class='month'>/month</span>";
+  proPrice.innerHTML = "$299<span class='month'>/month</span>";
+});
+
+annualTab.addEventListener("click", () => {
+  annualTab.classList.add("active");
+  monthlyTab.classList.remove("active");
+  plusPrice.innerHTML =
+    "$199<span class='month'>/month</span><br><small>$1,791 USD/year (25% off)</small>";
+  proPrice.innerHTML =
+    "$399<span class='month'>/month</span><br><small>$3,591 USD/year (25% off)</small>";
+});
